@@ -1,0 +1,97 @@
+	"id": 1;
+    "name": "Anti Mage",
+    "avatar":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dazzle.png",
+    "complexity": 1,
+    "attribute": [{
+    "agi_base": 20,
+    "agi_gain": 1.4,
+    "str_base": 18,
+    "str_gain": 2,
+    "int_base": 25,
+    "int_gain": 2.5,
+    "max_health": 516,
+    "max_mana": 375,
+    "health_regen": 2.1,
+    "mana_regen": 1.6,
+    "role_levels": [0, 3, 1, 1, 0, 0, 0, 0, 0],
+    "damage_max": 9,
+    "damage_min": 3,
+    "attack_capability": 1.7,
+    "attack_range": 1200,
+    "attack_rate": 575,
+    "armor": 3.3,
+    "magic_resistance": 25,
+    "movement_speed": 305,
+    "sight_range_day": 1800 ,
+    "sight_range_night": 800,
+    }]
+    "ability" : [{
+        "avatar":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/dazzle_poison_touch.png",
+        "poster":"https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/abilities/dazzle/dazzle_poison_touch.jpg",
+        "videowebm":"https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/abilities/dazzle/dazzle_poison_touch.webm",
+        "videomp4":"https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/abilities/dazzle/dazzle_poison_touch.mp4",
+        "nameskill":"Poison Touch",
+        "describle":"Releases a cone of poison that strikes multiple enemy units. Deals damage over time and slows the targets. Anytime the targets get attacked by Dazzle, the debuff duration is refreshed and slow is increased.",
+        "ability" : "Unit Target",
+        "affect" : "Enemy Units",
+        "damagetype": "Physical",
+        "piercesspellimmunity": false,
+        "dispellable":true,
+        "targets": "2.0 / 4.0 / 6.0 / 8.0",
+        "damagepersecond":"16.0 / 28.0 / 40.0 / 52.0",
+        "duration":"5.0 / 6.0 / 7.0 / 8.0",
+        "castrange":"500.0 / 600.0 / 700.0 / 800.0",
+        "cooldown":"27.0 / 23.0 / 19.0 / 15.0",
+        "manacost":"125 / 130 / 135 / 140",
+        "hint":"One of the few Dezun rites used for offensive purposes, the paralytic enchantment often proves useful."
+    }] 
+
+
+
+	"id": 50;
+    "name": "Dazzle";
+    "avatar":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dazzle.png";
+    "agi_base": 20;
+    "agi_gain": 1.4;
+    "str_base": 18;
+    "str_gain": 2;
+    "int_base": 25;
+    "int_gain": 2.5;
+    "max_health": 516;
+    "max_mana": 375;
+    "health_regen": 2.1;
+    "mana_regen": 1.6;
+    "role_levels": [0, 3, 1, 1, 0, 0, 0, 0, 0];
+    "damage_max": 9;
+    "damage_min": 3;
+    "attack_capability": 1.7;
+    "attack_range": 1200;
+    "attack_rate": 575;
+    "complexity": 1;
+    "armor": 3.3;
+    "magic_resistance": 25;
+    "movement_speed": 305;
+    "sight_range_day": 1800 ;
+    "sight_range_night": 800;
+    "ability" : {
+        "avatar":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/dazzle_poison_touch.png",
+        "poster":"https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/abilities/dazzle/dazzle_poison_touch.jpg",
+        "videowebm":"https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/abilities/dazzle/dazzle_poison_touch.webm",
+        "videomp4":"https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/abilities/dazzle/dazzle_poison_touch.mp4"
+        "nameskill":"Poison Touch",
+        "describle":"Releases a cone of poison that strikes multiple enemy units. Deals damage over time and slows the targets. Anytime the targets get attacked by Dazzle, the debuff duration is refreshed and slow is increased."
+        "ability" : "Unit Target",
+        "affect" : "Enemy Units",
+        "damagetype": "Physical",
+        "piercesspellimmunity": false,
+        "dispellable":true,
+        "targets": "2.0 / 4.0 / 6.0 / 8.0",
+        "damagepersecond":"16.0 / 28.0 / 40.0 / 52.0",
+        "duration":"5.0 / 6.0 / 7.0 / 8.0",
+        "castrange":"500.0 / 600.0 / 700.0 / 800.0",
+        "cooldown":"27.0 / 23.0 / 19.0 / 15.0",
+        "manacost":"125 / 130 / 135 / 140",
+        "hint":"One of the few Dezun rites used for offensive purposes, the paralytic enchantment often proves useful.",
+    }
+
+

@@ -1,46 +1,46 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+## Quy ước lỗi trả về với từ server
+{
+  "error": {
+    "publishDate": "Không được publish vào thời điểm trong quá khứ"
+  }
+}
+```
 
-## Available Scripts
+```ts
+interface EntityError {
+  [key: string | number]: string | EntityError | EntityError[]
+}
+```
 
-In the project directory, you can run:
 
-### `npm start`
+2. Các lỗi `error: string`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```ts
+{
+  "error": '❌❌❌Lỗi rồi bạn ơi ❌❌❌'
+}
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Lỗi từ RTK Query
 
-### `npm test`
+FetchBaseQueryError | SerializedError
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Tham khảo: [https://redux-toolkit.js.org/rtk-query/usage-with-typescript#type-safe-error-handling](https://redux-toolkit.js.org/rtk-query/usage-with-typescript#type-safe-error-handling)
 
-### `npm run build`
+## Cache data
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Caching là một tính năng quan trọng của RTK Query. Khi chúng ta fetch dữ liệu từ server, RTK Query sẽ cache dữ liệu vào Redux. Tất nhiên đây là cache trên RAM => F5 lại là mất
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Caching sẽ dựa vào
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- API endpoint (tức là mấy cái khai báo `getPosts`, `getPost` các kiểu đó)
+- Query params được sử dụng (ví dụ `1` là param trong `useGetPostQuery(1)`)
+- Số lượng active subscription cộng dồn
 
-### `npm run eject`
+Khi một component được mounted và gọi `useQuery` hook, thì component đó subcribe cái data đó => Ta có 1 subsciption, nếu nó unmount thì ta sẽ trở lại 0 (unsubcribe)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Khi request được gọi, nếu data đã được cache thi thì RTK sẽ không thực hiện request mới đến server mà trả về data cache đó
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Số lượng subscription được cộng dồn khi mà cùng gọi 1 endpoint và query param. Miễn là còn component subcribe data thì data nó chưa mất, nếu không còn component nào subcribe thì mặc định sau 60s data sẽ xóa khỏi cache (nếu lúc đó có component nào subcribe lại data đó thì còn dữ tiếp)
