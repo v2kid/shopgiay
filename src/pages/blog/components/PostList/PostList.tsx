@@ -60,7 +60,6 @@ export default function PostList() {
 
   return (
     // <section className='to-white-500 bg-gradient-to-r from-slate-50 via-blue-100'>
-    //   <SearchBar keyword={keyword} onSearch={handleSearch} />
     //   <div className='container mx-auto px-6 py-10'>
     //     <div className='mx-auto max-w-screen-xl px-4 md:px-8'>
     //       <div className='mb-10 md:mb-16'>
@@ -84,7 +83,7 @@ export default function PostList() {
     //           )}
     //           {!isFetching &&
     //             data?.map((post: Post) => (
-    //               <PostItem key={post._id} post={post} detailPost={detailPost} handleDeletePost={handleDeletePost} />
+    //               <PostItem key={post.id} post={post} detailPost={detailPost} handleDeletePost={handleDeletePost} />
     //             ))}
     //           <div className='inline-flex'>
     //             <button
@@ -107,10 +106,7 @@ export default function PostList() {
     //     </div>
     //   </div>
     // </section>
-    <div className="blogoverviewpage_BottomSection_1rCwx ">
-   {/* postlis */}
-  <div className="blogentrypage_LatestNewsContainer_3_5ne mt-6 grid grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-1 lg:grid-cols-3">
-    
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
   {isFetching && (
                  <Fragment>
                    <SkeletonPost />
@@ -124,12 +120,8 @@ export default function PostList() {
               <div className='inline-flex'>
               </div>
              <div className="blogoverviewpage_Pages_BieN0">
-  <div className="blogoverviewpage_PageNumber_FafYQ " onClick={prev}>&lt;</div>
-
-  <div className="blogoverviewpage_PageNumber_FafYQ" onClick={next}>&gt; </div>
 </div>
 
-  </div>
 </div>
   )
 }

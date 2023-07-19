@@ -27,16 +27,18 @@ export default function PostItem(props: PostItemProps) {
   //   setPostid(id)
   // }
   return (
-    <a className="blogcapsule_BlogCapsule_3OBoG" href="https://www.dota2.com/newsentry/3718329360979838399"><div className="blogcapsule_Entry_2P4kN" style={{ backgroundImage: `url(${post.featuredImage})` }}>
-        <div className="fade_FadeContainer_1JDI3 fade_Bottom_1NXAh">
-          <div className="fade_Fade_1keus"  />
-        </div>
-        <div className="blogcapsule_Desc_471NM">
-          As seasons go, spring doesn’t have much going for it. It’s wet, there’s too many insects, idiots
-          are all over the place skipping through parks and falling in love.
-        </div>
-        <div className="blogcapsule_Title_39UGs">{post.title}</div>
-        <div className="blogcapsule_Date_3kp_O">J{post.publishDate}</div>
-      </div></a>
+    <div className="md:p-8 p-2 bg-white">
+    <img className="rounded-lg w-full" src={post.featuredImage}
+     />
+    <p className="text-indigo-500 font-semibold text-base mt-2">{post.publishDate}</p>
+    <h1 className="font-semibold text-gray-900 leading-none text-xl mt-1 capitalize truncate">
+      {post.title}
+    </h1>
+    <div className="max-w-full">
+      <p className="text-base font-medium tracking-wide text-gray-600 mt-1">
+        {post.description}
+      </p>
+    </div>
+  </div>
   )
 }

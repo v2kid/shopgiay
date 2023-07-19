@@ -8,7 +8,8 @@ export const pageApi = createApi({
   tagTypes: ['Cart'], // Những kiểu tag cho phép dùng trong blogApi
   keepUnusedDataFor: 10, // Giữ data trong 10s sẽ xóa (mặc định 60s)
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://e-c-server.vercel.app/',
+    baseUrl: 'http://localhost:3001/',
+    // baseUrl: 'https://e-c-server.vercel.app/',
   }),
 
   endpoints: (build) => ({

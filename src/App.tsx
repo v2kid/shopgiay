@@ -14,6 +14,7 @@ import Home from 'pages/home/home'
 import DetailProduct from 'pages/detailproduct/detailproduct'
 import ManageProduct from 'pages/admin/product/manageproduct'
 import Blog from 'pages/admin/blog'
+import Blogshow from 'pages/blog'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -42,7 +43,7 @@ function App() {
     <Fragment>
       <ToastContainer />
       <Routes>
-      {/* <Route path='blog' element={<Blogshow />}/> */}
+      <Route path='blog' element={<Blogshow />}/>
       <Route path='admin' element={<ManageProduct />}/>
       <Route path='admin/blog' element={<Blog />}/>
         <Route path='admin/contacts'/>
